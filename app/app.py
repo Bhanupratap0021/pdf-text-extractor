@@ -1,6 +1,20 @@
 import streamlit as st
-import PyPDF2
-import pdfplumber
+
+# Install packages if missing
+try:
+    import PyPDF2
+except ImportError:
+    import subprocess
+    subprocess.check_call(["pip", "install", "PyPDF2"])
+    import PyPDF2
+
+try:
+    import pdfplumber
+except ImportError:
+    import subprocess
+    subprocess.check_call(["pip", "install", "pdfplumber"])
+    import pdfplumber
+
 import io
 
 # Page Config
